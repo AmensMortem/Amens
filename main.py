@@ -14,8 +14,8 @@ class App(QWidget, Ui_Form):
 
     def getImage(self):
         coords = self.xInput.text() + ',' + self.yInput.text()
-        map_request = f"http://static-maps.yandex.ru/1.x/?ll={coords}&scale={self.scaleInput.text()}&l=map"
-
+        map_request = f"http://static-maps.yandex.ru/1.x/?ll={coords}" \
+                      f"&z={self.scaleInput.text()}&l=map"
 
         response = requests.get(map_request)
 
