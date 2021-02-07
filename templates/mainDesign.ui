@@ -14,15 +14,25 @@
    <string>Карта</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="xInput"/>
+   <item row="2" column="1" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>X:</string>
+     </property>
+    </widget>
    </item>
    <item row="0" column="0" colspan="3">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="mapOut">
        <property name="text">
-        <string>TextLabel</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -34,12 +44,6 @@
       <string>Output</string>
      </property>
     </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLineEdit" name="scaleInput"/>
-   </item>
-   <item row="3" column="2">
-    <widget class="QLineEdit" name="yInput"/>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="label">
@@ -61,18 +65,28 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" colspan="2">
-    <widget class="QLabel" name="label_2">
+   <item row="3" column="2">
+    <widget class="QDoubleSpinBox" name="yInput">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="text">
-      <string>X:</string>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QDoubleSpinBox" name="xInput">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
     </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QSpinBox" name="scaleInput"/>
    </item>
   </layout>
  </widget>
