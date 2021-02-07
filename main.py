@@ -19,7 +19,7 @@ class App(QWidget, Ui_Form):
         self.outButton.clicked.connect(self.getImage)
 
     def getImage(self):
-        coords = self.xInput.text().replace(',', '.') +\
+        coords = self.xInput.text().replace(',', '.') + \
                  ',' + self.yInput.text().replace(',', '.')
         map_request = f"http://static-maps.yandex.ru/1.x/?ll={coords}" \
                       f"&z={self.scaleInput.text()}&l=map"
@@ -40,18 +40,16 @@ class App(QWidget, Ui_Form):
         key = event.key()
         if key == Qt.Key_PageUp:
             self.scaleInput.setValue(self.scaleInput.value() + 1)
-
         elif key == Qt.Key_PageDown:
             self.scaleInput.setValue(self.scaleInput.value() - 1)
 
-        elif key == Qt.Key_Left:
+        if key == Qt.Key_A:
             self.xInput.setValue(self.xInput.value() - 0.1)
-
-        elif key == Qt.Key:
+        elif key == Qt.Key_D:
             self.xInput.setValue(self.xInput.value() + 0.1)
-        elif key == Qt.Key_Down:
+        elif key == Qt.Key_S:
             self.yInput.setValue(self.yInput.value() - 0.1)
-        elif key == Qt.Key_Up:
+        elif key == Qt.Key_W:
             self.yInput.setValue(self.yInput.value() + 0.1)
         self.getImage()
 
