@@ -17,6 +17,7 @@ class App(QWidget, Ui_Form):
         self.yInput.setSingleStep(0.1)
         self.yInput.setRange(-180, 180)
         self.outButton.clicked.connect(self.getImage)
+        self.getImage()
 
     def getImage(self):
         coords = self.xInput.text().replace(',', '.') + \
