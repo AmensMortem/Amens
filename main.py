@@ -38,18 +38,21 @@ class App(QWidget, Ui_Form):
 
     def keyPressEvent(self, event):
         key = event.key()
+
+        # Масштабирование с помощь PgDown PgUp
         if key == Qt.Key_PageUp:
             self.scaleInput.setValue(self.scaleInput.value() + 1)
         elif key == Qt.Key_PageDown:
             self.scaleInput.setValue(self.scaleInput.value() - 1)
 
-        if key == Qt.Key_A:
+        # Управление WASD
+        if key in {Qt.Key_A, 1060}:
             self.xInput.setValue(self.xInput.value() - 0.1)
-        elif key == Qt.Key_D:
+        elif key in {Qt.Key_D, 1042}:
             self.xInput.setValue(self.xInput.value() + 0.1)
-        elif key == Qt.Key_S:
+        elif key in {Qt.Key_S, 1067}:
             self.yInput.setValue(self.yInput.value() - 0.1)
-        elif key == Qt.Key_W:
+        elif key in {Qt.Key_W, 1062}:
             self.yInput.setValue(self.yInput.value() + 0.1)
         self.getImage()
 
