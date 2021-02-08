@@ -12,19 +12,27 @@ class App(QWidget, Ui_Form):
         super(App, self).__init__()
         self.setupUi(self)
         self.scaleInput.setRange(1, 23)
-        self.xInput.setSingleStep(0.1)
-        self.xInput.setRange(-180, 180)
-        self.yInput.setSingleStep(0.1)
-        self.yInput.setRange(-180, 180)
+        self.xInput.setSingleStep(0.1), self.xInput.setRange(-180, 180)
+        self.yInput.setSingleStep(0.1), self.yInput.setRange(-180, 180)
+        self.layers = {'Схема': 'map', 'Спутник': 'sat', 'Гибрид': 'sat,skl'}
+        self.layer = 'Схема'
+
         self.outButton.clicked.connect(self.getImage)
+        self.radio_schema.toggled.connect(self.change_layers), self.radio_satellite.toggled.connect(self.change_layers)
+        self.radio_hybrid.toggled.connect(self.change_layers)
         self.getImage()
+
+    def change_layers(self):
+        radioButton = self.sender()
+        if radioButton.isChecked():
+            pass
+            self.layer = radioButton.text()
 
     def getImage(self):
         coords = self.xInput.text().replace(',', '.') + \
                  ',' + self.yInput.text().replace(',', '.')
         map_request = f"http://static-maps.yandex.ru/1.x/?ll={coords}" \
-                      f"&z={self.scaleInput.text()}&l=map"
-
+                      f"&z={self.scaleInput.text()}&l={self.layers[self.layer]}"
         response = requests.get(map_request)
 
         if not response:
@@ -32,7 +40,6 @@ class App(QWidget, Ui_Form):
             print(map_request)
             print("Http статус:", response.status_code, "(", response.reason, ")")
             sys.exit(1)
-
         pixmap = QPixmap()
         pixmap.loadFromData(response.content)
         self.mapOut.setPixmap(pixmap)
