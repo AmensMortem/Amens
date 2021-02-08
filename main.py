@@ -25,7 +25,6 @@ class App(QWidget, Ui_Form):
     def change_layers(self):
         radioButton = self.sender()
         if radioButton.isChecked():
-            pass
             self.layer = radioButton.text()
 
     def getImage(self):
