@@ -6,42 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>448</width>
-    <height>390</height>
+    <width>1159</width>
+    <height>669</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Карта</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="2" column="1" colspan="2">
-    <widget class="QLabel" name="label_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>X:</string>
+      <string>Y:</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="3">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="mapOut">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="4" column="0" colspan="3">
-    <widget class="QPushButton" name="outButton">
-     <property name="text">
-      <string>Output</string>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="minimumSize">
+      <size>
+       <width>1000</width>
+       <height>0</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -58,10 +44,10 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
-    <widget class="QLabel" name="label_3">
+   <item row="5" column="2">
+    <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>Y:</string>
+      <string>input</string>
      </property>
     </widget>
    </item>
@@ -85,8 +71,122 @@
      </property>
     </widget>
    </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>X:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QPushButton" name="outButton">
+     <property name="text">
+      <string>Output</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="1">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>90</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>70</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>Слои</string>
+       </property>
+       <widget class="QRadioButton" name="radio_hybrid">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Гибрид</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radio_satellite">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Спутник</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radio_schema">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>82</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Схема</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="mapOut">
+       <property name="minimumSize">
+        <size>
+         <width>1000</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="3" column="0">
     <widget class="QSpinBox" name="scaleInput"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_4">
+     <property name="maximumSize">
+      <size>
+       <width>1000</width>
+       <height>15</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Введите адрес:</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

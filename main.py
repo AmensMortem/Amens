@@ -33,7 +33,6 @@ class App(QWidget, Ui_Form):
         map_request = f"http://static-maps.yandex.ru/1.x/?ll={coords}" \
                       f"&z={self.scaleInput.text()}&l={self.layers[self.layer]}"
         response = requests.get(map_request)
-
         if not response:
             print("Ошибка выполнения запроса:")
             print(map_request)
